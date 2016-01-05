@@ -49,6 +49,17 @@ $config = [
                 '<controller><action>' => '<controller>/<action>',
             ],
         ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'facebook' => [
+                    'class' => 'yii\authclient\clients\Facebook',
+                    'clientId' => '2249536701945522',
+                    'clientSecret' => '5e28cc1c56cbb559cd169c7b61e401bd',
+                    'scope' => 'email,user_posts',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
