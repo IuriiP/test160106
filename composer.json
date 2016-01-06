@@ -11,6 +11,9 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
+        "bower-asset/bootstrap":"3.3.5",
+        "bower-asset/jquery": ">=1.9.1",
+        "facebook/php-sdk-v4": "4.0.23",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
