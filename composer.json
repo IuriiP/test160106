@@ -11,8 +11,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "bower-asset/bootstrap":"3.3.5",
-        "bower-asset/jquery": ">=1.9.1",
+        "fxp/composer-asset-plugin": "1.0.0",
         "facebook/php-sdk-v4": "4.0.23",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
@@ -26,5 +25,19 @@
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/twbs/bootstrap.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/jquery/jquery.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/yiisoft/jquery-pjax.git"
+        }
+    ]
 }
