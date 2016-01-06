@@ -15,7 +15,6 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -46,7 +45,7 @@ $config = [
             'enablePrettyUrl' => true,
             'rules' => [
                 '<action>' => 'site/<action>',
-                '<controller><action>' => '<controller>/<action>',
+                '<controller>/<action>' => '<controller>/<action>',
             ],
         ],
         'authClientCollection' => [

@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
@@ -11,8 +10,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        Тестовое задание для ПХП разработчика.
     </p>
+    <p>
+        Написать код, который будет симулировать запрос API фейсбука для получения постов пользователя.<br />
+        Когда кто-то обращается к нам , надо сходить на фейсбук с теми-же параметрами , получить данные в JSON виде, сохранить данные в локальную базу данных и в следующий раз отдавать их из базы, если они там есть.<br />
+        Кроме того, надо иметь возможность делать CRUD для данных в локальной DB.
+    </p>
+    <p>
+        Обязательные тулзы для исполнения задания:
+    </p>    
+    <ul>
+        <li>Yii 1.x</li>
+        <li>Active record</li>
+        <li>composer</li>
+        <li>Yii механизм миграций DB</li>
+    </ul>
 
-    <code><?= __FILE__ ?></code>
 </div>

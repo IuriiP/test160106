@@ -1,4 +1,6 @@
 Options +FollowSymLinks
+IndexIgnore */*
+
 RewriteEngine on
 
 # If a directory or a file exists, use the request directly

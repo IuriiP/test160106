@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ca17ddefdca0a44f1ba5765645f1f009",
-    "content-hash": "cd26eca45a07f0f660881846bad7b759",
+    "hash": "5527d82dab8035237c2f5191a0cd2a65",
+    "content-hash": "985bf65eaf65a5da01a291f2177623b1",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -319,36 +319,30 @@
         },
         {
             "name": "facebook/php-sdk-v4",
-            "version": "dev-master",
+            "version": "4.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
-                "reference": "7b39ac93b951b4faed9ae99984be81b22269386e"
+                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/7b39ac93b951b4faed9ae99984be81b22269386e",
-                "reference": "7b39ac93b951b4faed9ae99984be81b22269386e",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/c82611e05596622c9bd7abfa1cea1512d885c95e",
+                "reference": "c82611e05596622c9bd7abfa1cea1512d885c95e",
                 "shasum": ""
             },
             "require": {
-                "ext-mbstring": "*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "~5.0",
-                "mockery/mockery": "~0.8",
-                "phpunit/phpunit": "~4.0"
+                "guzzlehttp/guzzle": "~4.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
                 "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Facebook\\": "src/Facebook/"
@@ -370,7 +364,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2015-12-08 13:46:05"
+            "time": "2015-04-03 20:31:47"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -424,6 +418,47 @@
                 "mailer"
             ],
             "time": "2015-06-06 14:19:39"
+        },
+        {
+            "name": "yii2mod/yii2-user",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2mod/yii2-user.git",
+                "reference": "4cf1178dfa315912f8be99191a4e8bcf9871ba4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2mod/yii2-user/zipball/4cf1178dfa315912f8be99191a4e8bcf9871ba4d",
+                "reference": "4cf1178dfa315912f8be99191a4e8bcf9871ba4d",
+                "shasum": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii2mod\\user\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Semenov",
+                    "email": "disemx@gmail.com"
+                },
+                {
+                    "name": "Igor Chepurnoy",
+                    "email": "igorzfort@gmail.com"
+                }
+            ],
+            "description": "User module",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "time": "2015-07-13 08:15:41"
         },
         {
             "name": "yiisoft/yii2",
@@ -1018,9 +1053,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "facebook/php-sdk-v4": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

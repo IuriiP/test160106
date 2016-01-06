@@ -1,83 +1,51 @@
-Yii 2 Basic Project Template
+Yii 2 Test over Basic Project
 ============================
 
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+Тестовое задание для ПХП разработчика.
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
+Написать код, который будет симулировать запрос API фейсбука для получения постов пользователя.
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
+Когда кто-то обращается к нам, надо сходить на фейсбук с теми-же параметрами, 
+получить данные в JSON виде, сохранить данные в локальную базу данных и в 
+следующий раз отдавать их из базы, если они там есть.
 
-DIRECTORY STRUCTURE
--------------------
-
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
+Кроме того, надо иметь возможность делать CRUD для данных в локальной DB.
 
 
+Обязательные тулзы для исполнения задания:
+
+    Yii 1.x
+    Active record
+    composer
+    Yii механизм миграций DB
+
+DEVELOPER COMMENTS
+------------
+
+К сожалению, я открыл для себя Yii совсем недавно и сразу начал осваивать Yii2.
+Чтобы не тратить время на переучивание под Yii1, использовал известный мне движок.
 
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.4.0.
+The minimum requirement by this project that your Web server supports PHP 5.4.0.
 
 
 INSTALLATION
 ------------
 
-### Install from an Archive File
+### Fork this GIT repository locally
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-Set cookie validation key in `config/web.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
-```
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/basic/web/
-~~~
-
-
-### Install via Composer
+### Install dependencies via Composer
 
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
-You can then install this project template using the following command:
+You can then install dependencies using the following command:
 
 ~~~
-php composer.phar global require "fxp/composer-asset-plugin:~1.0.0"
-php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
+composer update
 ~~~
-
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/basic/web/
-~~~
-
 
 CONFIGURATION
 -------------
@@ -89,13 +57,55 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'root',
-    'password' => '1234',
+    'dsn' => 'mysql:host=<yourDBhost>;dbname=<yourDBname>',
+    'username' => '<yourDBuserName>',
+    'password' => '<yourDBpassword>',
     'charset' => 'utf8',
 ];
 ```
 
-**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
+**NOTE:** You can leave the default remote database settings.
 
-Also check and edit the other files in the `config/` directory to customize your application.
+### Application keys for Facebook
+
+You can get your application key [here](https://developers.facebook.com/apps)
+or use my test key. 
+
+```js
+    'components' => [
+        /...
+        'authClientCollection' => [
+            /...
+            'clients' => [
+                'facebook' => [
+                    /...
+                    'clientId' => '<yourAppId>',
+                    'clientSecret' => '<yourAppSecret>',
+                    /...
+                ],
+            ],
+        ],
+        /...
+    ],
+```
+
+**NOTE:** You can leave the default Facebook Application key settings.
+
+### Set up the database migration
+
+~~~
+php yii migrate/up
+~~~
+
+### Apache virtual host setup
+
+Create the virtual host to `<yourPathToProject>/web` directory.
+`mod_rewrite` must be enabled! [See about...](http://httpd.apache.org/docs/current/mod/mod_rewrite.html)
+Restart Apache.
+
+**NOTE:** On some hosting provider you'll be directed to root directory only. It's not trouble!
+The site will work in this case, but you'll have some security vulnerability.
+
+### Go to site
+
+You must login over Facebook account for access to CRUD.
