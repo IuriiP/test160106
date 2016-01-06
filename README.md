@@ -101,6 +101,7 @@ php yii migrate/up
 
 Create the virtual host to `<yourPathToProject>/web` directory.
 `mod_rewrite` must be enabled! [See about...](http://httpd.apache.org/docs/current/mod/mod_rewrite.html)
+
 Restart Apache.
 
 **NOTE:** On some hosting provider you'll be directed to root directory only. It's not trouble!
