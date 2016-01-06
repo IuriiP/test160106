@@ -11,33 +11,43 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "fxp/composer-asset-plugin": "1.0.0",
-        "facebook/php-sdk-v4": "4.0.23",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "facebook/php-sdk-v4": "~4.0",
-        "yiisoft/yii2-authclient": "2.0.5",
-        "yii2mod/yii2-user": "^1.0"
+        "yiisoft/yii2-faker": "^2.0",
+        "yiisoft/yii2-authclient": "^2.0",
+        "codeception/codeception": "*",
+        "facebook/php-sdk-v4": "4.0.23"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
-        "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-faker": "*"
+        "yiisoft/yii2-gii": "*"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/twbs/bootstrap.git"
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
         },
-        {
-            "type": "git",
-            "url": "https://github.com/jquery/jquery.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/yiisoft/jquery-pjax.git"
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
         }
-    ]
+    }
 }
