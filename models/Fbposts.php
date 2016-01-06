@@ -62,6 +62,11 @@ class Fbposts extends \yii\db\ActiveRecord
         return new FbpostsQuery(get_called_class());
     }
     
+    /**
+     * Grab the user's ungrabbed posts from Facebook
+     * 
+     * @param \yii\authclient\BaseOAuth $client
+     */
     public static function grabSocial(\yii\authclient\BaseOAuth $client) {
         if($client->getId()==='facebook') {
             $token = $client->getAccessToken();
