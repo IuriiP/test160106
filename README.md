@@ -36,6 +36,13 @@ INSTALLATION
 
 ### Fork this GIT repository locally
 
+I.e. just clone:
+
+```
+cd /var/www
+git clone https://github.com/IuriiP/test160106.git gittest
+```
+
 ### Install dependencies via Composer
 
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
